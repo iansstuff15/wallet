@@ -14,8 +14,8 @@ class AppButton extends StatefulWidget {
   Color? foreground;
   String? icon;
   AppButton(this.text, this.onPressed,
-      {this.width = 100,
-      this.height = 36,
+      {this.width = double.infinity,
+      this.height = 50,
       this.textWeight = FontWeight.bold,
       this.textSize = 16,
       this.background,
@@ -34,6 +34,7 @@ class _AppButtonState extends State<AppButton> {
       child: ElevatedButton(
           onPressed: widget.onPressed,
           style: ButtonStyle(
+              elevation: MaterialStateProperty.all(0),
               backgroundColor: MaterialStateProperty.all(widget.background)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

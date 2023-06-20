@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:wallet/components/AppButton.dart';
 import 'package:wallet/components/AppInput.dart';
 import 'package:wallet/components/AppTextButton.dart';
@@ -11,7 +12,7 @@ import 'package:wallet/utilities/sizes.dart';
 
 class ForgotPassword extends StatelessWidget {
   static String id = "forgotpassword";
-
+  TextEditingController email = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +43,7 @@ class ForgotPassword extends StatelessWidget {
                         SizedBox(
                           height: AppSizes.medium,
                         ),
-                        AppInput("Email", TextInputType.emailAddress),
+                        AppInput("Email", TextInputType.emailAddress, email),
                         SizedBox(
                           height: AppSizes.small,
                         ),
@@ -59,7 +60,7 @@ class ForgotPassword extends StatelessWidget {
                         ),
                         AppTextButton(
                           "Remembered Password? Login",
-                          () => {Navigator.pushNamed(context, Login.id)},
+                          () => {Get.toNamed(Login.id)},
                           width: double.infinity,
                         ),
                       ],

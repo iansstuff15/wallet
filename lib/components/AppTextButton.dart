@@ -3,8 +3,8 @@ import 'package:wallet/utilities/colors.dart';
 import 'package:wallet/utilities/sizes.dart';
 
 class AppTextButton extends StatefulWidget {
-  double? width;
-  double? height;
+  double? width = double.infinity;
+  double? height = 50;
   String? text;
   double? textSize;
   FontWeight? textWeight;
@@ -12,8 +12,8 @@ class AppTextButton extends StatefulWidget {
   Color? background;
   Color? foreground;
   AppTextButton(this.text, this.onPressed,
-      {this.width = 100,
-      this.height = 36,
+      {this.width = double.infinity,
+      this.height = 50,
       this.textWeight = FontWeight.normal,
       this.textSize = 16,
       this.background,
